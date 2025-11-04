@@ -1,0 +1,151 @@
+# Round 4 Reflection: Final Project Decision
+
+**Name**: Benjamin Ham 
+**PennKey**: benjiham
+**Date**: 11/04/2025
+
+---
+
+## 1. What I Explored Today
+
+_List the projects you seriously considered. Keep it brief._
+
+| Project Name | Source  | Key Takeaway (1 sentence) |
+|-------------|---------|---------------------------|
+| StreetEats  | Round 3 | Clear problem and stakeholder incentives with a realistic web stack and strong built-in quality control using owner verification and reputation. |
+| CrowdQueues | Round 3 | Technically simple campus wait-time and vibe tracker with strong feasibility but more uncertainty around recruiting enough daily contributors to keep data fresh. |
+| CrowdQA     | Instructor | Extremely lightweight lecture confusion tracker with a clean core loop and captive audience, but it depends heavily on getting at least one professor to commit early. |
+
+
+**Resources I used**:
+- [X] Rubric scoring (RUBRIC-PROJECT-VIABILITY.md)
+- [ ] V2 detailed analyses (reports/v2-analyses/)
+- [X] Steelman Analysis pathways (STEELMAN-ANALYSIS.md)
+- [X] Group discussions
+- [ ] Other: [specify]
+
+---
+
+## 2. My Decision
+
+**Project Name**: StreetEats
+
+**Decision type**:
+- [ ] STAYING with Round 3 project (same approach)
+- [ ] STAYING with Round 3 project (modified approach/scope)
+- [ ] PIVOTING to different project
+- [x] JOINING another team's project
+
+**If pivoting or adopting someone's idea**:
+- Original author (if applicable): Braden Johnson, bradenj  
+- Original round: R3
+
+---
+
+## 3. Why This Decision
+
+StreetEats solves a very concrete and familiar problem for students and city residents, which is wasting time walking to a food truck that is closed or missing and not having a single place to see which trucks nearby are open and worth visiting right now. The project already has a clear problem statement, a defined set of stakeholders, and a realistic technical stack with a React front end, a Node and Express backend and PostgreSQL, so I can plug into an existing plan instead of spending extra time still shaping the core idea. Compared with my previous project, which focused on campus wait times and vibes more generally, StreetEats has a narrower and more transactional use case that is easier to explain, easier to validate, and easier to demonstrate at the end of the semester.
+
+On the crowdsourcing side, StreetEats matches the rubric well because the tasks are short and natural and the people who contribute are also the ones who benefit most from the information. Users who are already at a truck can quickly confirm whether it is open, add a simple status update or menu photo, and later use the app themselves to avoid closed trucks or discover better options nearby. The team has also already thought through stronger quality control than most projects, with owner verified updates as a gold standard, confidence scores based on redundant reports, reputation scores, and simple outlier detection. That makes it easier to argue that the system will stay reliable as it grows. Joining a group that has a steelman analysis, known metrics like target numbers of trucks and users, and explicit challenges and mitigation strategies gives me more structure and a higher chance of executing something solid within five weeks.
+
+**What convinced me**:
+- The problem is simple to explain and comes up in daily life for students and people in University City.  
+- The technical stack and architecture are well within my skills and the five week timeline.  
+- The team already did serious thinking about quality control, recruitment, and scope, so I can focus on building and validating instead of still exploring ideas.
+
+**What concerns me** (and how I'll address it):
+- Concern 1: Getting both food truck owners and regular users to care early enough to avoid a cold start.  
+  → Mitigation: Start with a very tight pilot in University City, personally reach out to a small number of truck owners, and seed data ourselves so the app never looks empty.  
+- Concern 2: Keeping data fresh during off hours or in lower traffic spots.  
+  → Mitigation: Focus initial UX around the most popular trucks and time windows, add simple nudges and notifications to prompt repeat contributions from the most active users, and monitor which locations are actually being updated.
+
+---
+
+## 4. What I'm Building
+
+**One-sentence project description**:  
+StreetEats is a web platform that uses crowdsourced reports and owner verification to show real time locations, status, and basic reviews for food trucks around Penn and University City so people do not waste time walking to closed or low quality trucks.
+
+**MVP Scope** (3-4 core features only):
+
+1. **Live truck status map**: A web map and list view that shows food trucks in the pilot area with simple open or closed status and last update time.  
+2. **Crowd check in flow**: A quick reporting form where users can confirm a truck is open or closed, add a simple time bound status such as open until a certain time, and optionally attach a short note or photo.  
+3. **Owner verification and override**: A lightweight owner login or code based flow so truck owners can verify status and hours and have their updates count more in the aggregation.  
+4. **Reputation and confidence scoring**: A basic aggregation layer that combines multiple user reports, weights owner and high reliability users more heavily, and exposes a confidence indicator for each truck status.
+
+**What I'm explicitly NOT building** (to keep scope realistic):
+- Native mobile apps or deep native features such as push notifications on iOS or Android.  
+- A full recommendation engine that ranks trucks based on complex personal preferences.  
+- Large scale advertising and monetization features such as a full ad network or advanced analytics dashboards for owners beyond simple usage stats.  
+
+---
+
+## 5. Week 1 Validation
+
+**The specific test I'll run Week 1**:
+
+- **Where**:  
+  - Post a simple signup and interest form plus a short description of StreetEats in at least two large class chats that I am already in, such as CIS and STAT courses.  
+  - Share the same link in one or two dorm or house group chats and one club chat.  
+  - Visit two or three high traffic trucks in University City and ask owners if they are willing to try an owner verification flow once an early prototype is live.
+
+- **When**:  
+  - Online posts on the first Monday of Week 1 in the morning around 10 am, with one follow up reminder later in the week.  
+  - In person outreach to truck owners on one afternoon in Week 1 when trucks are busy at lunch.
+
+- **What**:  
+  - For students, a short message that explains the one sentence value of StreetEats, links to a basic landing page or interest form, and asks if they would use a prototype during a pilot.  
+  - For truck owners, a very short pitch that shows how the app can help them get more predictable traffic and reduce frustration for customers, and a request for an email or phone contact for follow up.
+
+- **Success metric**:  
+  - At least twenty interested student signups or responses from the combined online channels in Week 1 and at least two food truck owners who agree to be contacted again for the pilot.
+
+**If Week 1 test fails, I will**:
+- [x] Pivot to: focus first on student only status reports and treat owner verification as a later stage feature.  
+- [ ] Use MTurk/paid participants  
+- [x] Try different recruitment channel: ask one instructor for a quick in class mention and put QR codes near trucks and in dining halls.  
+- [ ] Simplify the task to: [easier version]  
+- [ ] Other: [specify]
+
+---
+
+## 6. **Tentative** Team (Optional, Only If You Already Have An Idea)
+
+At this stage, you are not expected to have formed teams, however if you already have an idea of who you intend to work with, you may indicate it here.
+
+**Team members**:
+
+1. [Name] ([PennKey]) - [Primary role]
+2. [Name] ([PennKey]) - [Primary role]
+3. [Name] ([PennKey]) - [Primary role] _(optional)_
+4. [Name] ([PennKey]) - [Primary role] _(optional)_
+
+**Team status**:
+- [ ] Same team from Round 3
+- [ ] New team formed during Round 4
+- [ ] Solo (will find teammates later)
+- [ ] Joining an existing team
+
+---
+
+## 7. Reflection
+
+**Most valuable part of Round 4**:
+Round 4 helped me understand the pros and cons of the existing group ideas. It helped me better understand how I can better improve the group I joined.
+
+
+**One thing I'd tell future students about Round 4**:
+I would advise students to keep an open mind about and have a steelman approach to the concepts. 
+
+---
+
+## Commitment
+
+**I commit to**:
+- [X] Building the MVP scope above (3-4 features maximum)
+- [X] Running a concrete Week 1 validation test
+- [X] Pivoting if Week 1 shows <20% success
+- [X] Meeting with instructor if I hit major blockers
+
+**Signature**: ____Benjamin Ham_____________ **Date**: ____11/04/2025______
+
